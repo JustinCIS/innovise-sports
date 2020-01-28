@@ -1,24 +1,26 @@
-<div>
-  Sports
-  <select (change)="changeSport($event.target.value)" formControlName="sports" id="sports">
-    <option *ngFor="let sport of sports; let i = index" [value]="sports[i].Id">
-      {{sports[i].Name}}
-    </option>
-  </select>
-</div>
-<div>
-  Teams
-  <select (change)="changeTeam($event.target.value)" formControlName="teams" id="teams">
-    <option *ngFor="let team of teams; let i = index" [value]="teams[i].Id">
-      {{teams[i].Name}}
-    </option>
-  </select>
-</div>
-<div>
-  Players
-  <ul>
-    <li *ngFor="let player of players; let i = index">
-      {{players[i].Name}} - Jersey Number {{players[i].JerseyNumber}}
-    </li>
-  </ul>
-</div>
+<form [formGroup]="innoviseForm">
+  <div>
+    Sports
+    <select formControlName="sports" id="sports">
+      <option *ngFor="let sport of sports; let i = index" [value]="sports[i].Id">
+        {{sports[i].Name}}
+      </option>
+    </select>
+  </div>
+  <div>
+    Teams
+    <select formControlName="teams" id="teams">
+      <option *ngFor="let team of teams; let i = index" [value]="teams[i].Id">
+        {{teams[i].Name}}
+      </option>
+    </select>
+  </div>
+  <div>
+    Players
+    <ul>
+      <li *ngFor="let player of players; let i = index">
+        {{players[i].Name}} - Jersey Number {{players[i].JerseyNumber}}
+      </li>
+    </ul>
+  </div>
+</form>
